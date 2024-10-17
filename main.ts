@@ -22,6 +22,20 @@ function modell_Buggy () {
         sender.sender_ButtonA_Switch(),
         btf.e3Abstand.u0
         )
+    } else if (sender.isFunktion(sender.eFunktion.f10fernstartenSpurfolger)) {
+        sender.send10Spurfolger(
+        btf.btf_sendBuffer19(),
+        192,
+        160,
+        31,
+        0,
+        sender.sender_ButtonA_Switch(),
+        btf.e3Abstand.u0,
+        sender.sender_zehntelsekunden(btf.ePause.s1)
+        )
+        btf.setaktiviert(btf.btf_sendBuffer19(), btf.e3aktiviert.mc, sender.sender_ButtonB_Switch())
+    } else {
+    	
     }
 }
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
